@@ -9,48 +9,13 @@
     <link rel="shortcut icon" href="../images/box2-heart.ico" type="image/x-icon">
     <title>Page 1</title>
 </head>
-<body onload="myFunction()">
-  <div id="loader" style="width:100%;height:100vh;display:flex;justify-content:center;align-items:center;">
-    <div class="newtons-cradle">
-        <div class="newtons-cradle__dot"></div>
-        <div class="newtons-cradle__dot"></div>
-        <div class="newtons-cradle__dot"></div>
-        <div class="newtons-cradle__dot"></div>
-        </div>
-        
-</div>
-  <div class="animate-bottom" style="display:none;" id="myDiv">
-  <div class="container">
-    <h1 id="headline">The remaining time until Delsa's Birthday</h1>
-    <div id="countdown">
-      <ul>
-        <li><span id="days"></span>days</li>
-        <li><span id="hours"></span>Hours</li>
-        <li><span id="minutes"></span>Minutes</li>
-        <li><span id="seconds"></span>Seconds</li>
-      </ul>
-    </div>
-    <div id="content" class="emoji">
-      <span>🥳</span>
-      <span>🎉</span>
-      <span>🎂</span>
-    </div>
-  </div>
-  </div>
+<body>
+
+  <h1>Happy Birthday<br>Dear Delsa</h1>
+  <canvas id="birthday"></canvas>
 
 
 
-  <script>
-    var myVar;
-    function myFunction() {
-    myVar = setTimeout(showPage, 3000);
-    }
-    function showPage() {
-    const element= document.getElementById("loader");
-    element.style.display = "none";
-    document.getElementById("myDiv").style.display = "block";
-    }
-</script>
     <script src="../Js/Timer1.js"></script>        
 </body>
 </html>
