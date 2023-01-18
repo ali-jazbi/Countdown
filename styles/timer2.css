@@ -1,121 +1,124 @@
-@import '//fonts.googleapis.com/css?family=Bangers';
+@import url('https://fonts.googleapis.com/css?family=Indie+Flower');
+@import url('https://fonts.googleapis.com/css?family=Amatic+SC');
+
 body {
-  margin: 0;
+	font-family: 'Indie Flower', cursive !important;
+  background: #FDE3A7; /*CAPE HONEY*/
+	margin: 0px;
+	padding: 0px;
 }
 
-.wrap {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-  background: black;
+::selection {
+	background: transparent;
 }
 
-.time-to {
-  text-align: center;
-  font-family: Bangers;
-  color: white;
-  font-size: 35px;
-  letter-spacing: 2px;
-}
-.time-to span {
-  display: block;
-  font-size: 80px;
-  color: red;
-}
-/* NOTE Loader : */
-.newtons-cradle {
-  width: 150px;
-  height: 150px;
-  --uib-size: 100px;
-  --uib-speed: 1.2s;
-  --uib-color: #FF0000;
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+h4 {
+	font-size: 26px;
+	line-height: 1px;
+	font-family: 'Amatic SC', cursive !important;
 }
 
-.newtons-cradle__dot {
-position: relative;
-display: flex;
-align-items: center;
-height: 100%;
-width: 25%;
-transform-origin: center top;
+.color1{color:#1BBC9B}/*MOUNTAIN MEADOW*/
+.color2{color:#C0392B/*TALL POPPY*/}
+
+
+.card {
+	color: #013243; /*SHERPA BLUE*/
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 300px;
+	height: 400px;
+	background: #e0e1dc;
+	transform-style: preserve-3d;
+	transform: translate(-50%,-50%) perspective(2000px);
+	box-shadow: inset 300px 0 50px rgba(0,0,0,.5), 20px 0 60px rgba(0,0,0,.5);
+	transition: 1s;
 }
 
-.newtons-cradle__dot::after {
-content: '';
-border: 2px solid rgb(0, 0, 0);
-display: block;
-width: 100%;
-height: 25%;
-border-radius: 50%;
-background-color: var(--uib-color);
+.card:hover{
+	transform: translate(-50%,-50%) perspective(2000px) rotate(15deg) scale(1.2);
+	box-shadow: inset 20px 0 50px rgba(0,0,0,.5), 0 10px 100px rgba(0,0,0,.5);
 }
 
-.newtons-cradle__dot:first-child {
-animation: swing var(--uib-speed) linear infinite;
+
+.card:before {
+	content:'';
+	position: absolute;
+	top: -5px;
+	left: 0;
+	width: 100%;
+	height: 5px;
+	background: #BAC1BA;
+	transform-origin: bottom;
+	transform: skewX(-45deg);
 }
 
-.newtons-cradle__dot:last-child {
-animation: swing2 var(--uib-speed) linear infinite;
+.card:after {
+	content: '';
+	position: absolute;
+	top: 0;
+	right: -5px;
+	width: 5px;
+	height: 100%;
+	background: #92A29C;
+	transform-origin: left;
+	transform: skewY(-45deg);
 }
 
-@keyframes swing {
-0% {
-transform: rotate(0deg);
-animation-timing-function: ease-out;
+.card .imgBox {
+	width: 100%;
+	height: 100%;
+	position: relative;
+	transform-origin: left;
+	transition: .7s;
 }
 
-25% {
-transform: rotate(70deg);
-animation-timing-function: ease-in;
+.card .bark {
+	position: absolute;
+	background: #e0e1dc;
+	width: 100%;
+	height: 100%;
+	opacity: 0;
+	transition: .7s;
 }
 
-50% {
-transform: rotate(0deg);
-animation-timing-function: linear;
-}
-}
-
-@keyframes swing2 {
-0% {
-transform: rotate(0deg);
-animation-timing-function: linear;
+.card .imgBox img {
+	min-width: 250px;
+	max-height: 400px;
 }
 
-50% {
-transform: rotate(0deg);
-animation-timing-function: ease-out;
+.card:hover .imgBox {
+	transform: rotateY(-135deg);
 }
 
-75% {
-transform: rotate(-70deg);
-animation-timing-function: ease-in;
-}
-}
-/* Loader </> */
-
-/* NOTE appear animition */
-.animate-bottom {
-  display: flex;
-  justify-content: center;
-  position: relative;
-  -webkit-animation-name: animatebottom;
-  -webkit-animation-duration: 1s;
-  animation-name: animatebottom;
-  animation-duration: 1s
+.card:hover .bark {
+	opacity: 1;
+	transition: .6s;
+  box-shadow: 300px 200px 100px rgba(0, 0, 0, .4) inset;
 }
 
-@-webkit-keyframes animatebottom {
-  from { bottom:-100px; opacity:0 } 
-  to { bottom:0px; opacity:1 }
+.card .details {
+	position: absolute;
+	top: 0;
+	left: 0;
+	box-sizing: border-box;
+	padding: 0 0 0 10px;
+	z-index: -1;
+	margin-top: 70px;
 }
 
-@keyframes animatebottom { 
-  from{ bottom:-100px; opacity:0 } 
-  to{ bottom:0; opacity:1 }
+.card .details p {
+	font-size: 15px;
+	line-height: 5px;
+	transform: rotate(-10deg);
+	padding: 0 0 0 20px;
 }
-/* appear animition </> */
+
+.card .details h4 {
+	text-align: center;
+}
+
+.text-right {
+	text-align: right;
+}
